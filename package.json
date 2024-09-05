@@ -2,10 +2,10 @@
   "name": "sims",
   "version": "0.0.1",
   "description": "",
-  "main": "./src/simV0.js",
+  "main": "./src",
   "type": "module",
   "scripts": {
-    "sim": "node ./src/simV0.js",
+    "sim": "node ./src",
     "jsTest": "node ./test.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

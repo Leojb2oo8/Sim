@@ -1,4 +1,4 @@
-import {Creature} from "./Classes/Creatures.js"
+import {Creature} from "./Classes"
 import {population} from "./Variables.js";
 
 export function born(amountBorn) {
