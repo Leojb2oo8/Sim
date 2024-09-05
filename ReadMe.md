@@ -1,2 +1,4 @@
-Hello
-no
+Creature Propeties:
+Speed
+
+Day Loop:
