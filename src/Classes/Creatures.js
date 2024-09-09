@@ -1,8 +1,6 @@
 import {origin} from "../Variables.js"
 import {born} from "../utils.js"
 
-let currentCreaturNum = 0
-
 export class Creature {
     food = 0;
     constructor(speed = Math.floor(Math.random() * 100) + 1) {
