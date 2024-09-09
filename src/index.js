@@ -1,3 +1,4 @@
+import { Creature } from "./Classes/index.js";
 import {born} from "./utils.js"
 import {startPopulation, maxDays, origin, population} from "./Variables.js"
 
@@ -28,7 +29,7 @@ function changePopulation() {
   
 }
 
-born(startPopulation)
+born(startPopulation, Creature)
 
 let itreations = 0;
 while (itreations <= maxDays || population.length == 0) {

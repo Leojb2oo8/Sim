@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "sim": "node ./src",
-    "jsTest": "node ./test.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
