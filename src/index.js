@@ -1,11 +1,8 @@
-import { Creature } from "./Classes/index.js";
 import {born} from "./utils.js"
-import {startPopulation, maxDays, origin, population} from "./Variables.js"
-
-
+import {creatureStartPopulation, treeStartPopulation, maxDays, origin, creaturePopulation, treePopulation} from "./Variables.js"
 
 function orderPopulation(a, b) {
-  b.speed - a.speed;
+  return b.speed - a.speed;
 }
 
 function feedCreature(elem) {
@@ -19,28 +16,32 @@ function changeCreature(elem) {
 
 
 function feedPopulation() {
-  while (origin.foodToCollect>0) {
-    population.sort(orderPopulation).forEach(feedCreature); 
-  }
+  // while (origin.foodToCollect>0) {
+    creaturePopulation.sort(orderPopulation).forEach(feedCreature); 
+  // }
 }
 
 function changePopulation() {
-  population.forEach(changeCreature); 
+  creaturePopulation.forEach(changeCreature); 
   
 }
 
-born(startPopulation, Creature)
+born(creatureStartPopulation, "Creature")
+born(treeStartPopulation, "Tree")
 
 let itreations = 0;
-while (itreations <= maxDays || population.length == 0) {
-  origin.foodToCollect = 7
+while (itreations <= maxDays || creaturePopulation.length == 0) {
+  origin.foodToCollect = 12
+  console.log(creaturePopulation)
   feedPopulation()
+  console.log(creaturePopulation)
   changePopulation()
+  console.log(creaturePopulation)
   itreations ++ 
 }
 
-console.log(population)
-
+console.log(creaturePopulation)
+console.log(treePopulation)
 
 
 

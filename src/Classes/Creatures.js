@@ -1,13 +1,16 @@
 import {origin} from "../Variables.js"
-import {born} from "../utils.js"
-
+import {born, randomInt} from "../utils.js"
+let currentNameNum = 0
 export class Creature {
     
-    constructor(speed = Math.floor(Math.random() * 100) + 1, height = Math.floor(Math.random() * 100) + 1) {
-      this.height = height;
+    constructor(speed = randomInt(100), height = randomInt(10), carryStrenth = randomInt(3)) {
+      this.name = currentNameNum+1
+      currentNameNum++
       this.speed = speed;
+      this.height = height;
+      this.carryStrenth = carryStrenth;
+      this.food = 0;
     }
-    food = 0;
     feed() {
       if (origin.foodToCollect > 0) {
         this.food ++;
@@ -18,7 +21,7 @@ export class Creature {
       if (this.food >= 1){
         this.food --
         if (this.food > 0){
-          born(this.food)
+          born(this.food, "Creature")
           this.food = 0
         }
       }

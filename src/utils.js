@@ -1,8 +1,19 @@
-import {Creature} from "./Classes/index.js"
-import {population} from "./Variables.js";
+import {Creature, Tree} from "./Classes/index.js"
+import {creaturePopulation, treePopulation} from "./Variables.js";
 
 export function born(amountBorn, whatBorn) {
     for (let i = 0; i < amountBorn; i++) {
-      population.push(new Creature());
+      switch (whatBorn){
+        case "Creature":
+          creaturePopulation.push(new Creature());
+          break
+        case "Tree":
+          treePopulation.push(new Tree());
+          break
+      }
     }
   }
+
+export function randomInt(max, min=1) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}

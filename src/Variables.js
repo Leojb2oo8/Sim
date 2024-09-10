@@ -1,7 +1,9 @@
-export const startPopulation = 5;
+export const creatureStartPopulation = 5;
+export const treeStartPopulation = 2;
 export const maxDays = 5;
-export let population = [];
+export let creaturePopulation = [];
+export let treePopulation = [];
 
 export const origin = {
-    foodToCollect: 7
+    foodToCollect: 12
 }
