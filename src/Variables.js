@@ -5,5 +5,9 @@ export let creaturePopulation = [];
 export let treePopulation = [];
 
 export const origin = {
-    foodToCollect: 2
-}
+  foodToCollect: 2,
+};
+
+export const setNewPopulation = (population) => {
+  creaturePopulation = population;
+};

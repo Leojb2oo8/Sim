@@ -1,4 +1,2 @@
-Creature Propeties:
-Speed
-
-Day Loop:
+To Do
+Make constant to use in settings(visual)
