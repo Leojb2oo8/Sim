@@ -5,5 +5,9 @@ export class Tree{
         this.foodAvailable = food
         this.height = height
         this.lifeTime = liveDays
+        this.originalFood = this.foodAvailable
+    }
+    regenFood() {
+        this.foodAvailable = this.originalFood
     }
 }
