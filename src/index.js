@@ -1,4 +1,4 @@
-import {born} from "./utils.js"
+import {born, checkAlive} from "./utils.js"
 import {creatureStartPopulation, treeStartPopulation, maxDays, origin, creaturePopulation, treePopulation} from "./Variables.js"
 
 function orderPopulation(a, b) {
@@ -7,6 +7,10 @@ function orderPopulation(a, b) {
 
 function feedCreature(elem) {
   elem.feed();
+}
+
+function regenTreeFood(elem) {
+  elem.regenFood()
 }
 
 function changeCreature(elem) {
@@ -23,6 +27,7 @@ function feedPopulation() {
 
 function changePopulation() {
   creaturePopulation.forEach(changeCreature); 
+  // creaturePopulation.splice(creaturePopulation.forEach(checkAlive),1)
   
 }
 
@@ -31,17 +36,17 @@ born(treeStartPopulation, "Tree")
 
 let itreations = 0;
 while (itreations <= maxDays || creaturePopulation.length == 0) {
-  origin.foodToCollect = 12
-  console.log(creaturePopulation)
+  treePopulation.forEach(regenTreeFood);
+  origin.foodToCollect = 2
+  console.log(creaturePopulation,treePopulation)
   feedPopulation()
-  console.log(creaturePopulation)
+  console.log(creaturePopulation,treePopulation)
   changePopulation()
-  console.log(creaturePopulation)
+  console.log(creaturePopulation,treePopulation)
   itreations ++ 
 }
 
-console.log(creaturePopulation)
-console.log(treePopulation)
+console.log(creaturePopulation,treePopulation)
 
 
 

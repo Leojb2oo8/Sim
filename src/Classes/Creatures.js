@@ -7,9 +7,10 @@ export class Creature {
       this.name = currentNameNum+1
       currentNameNum++
       this.speed = speed;
-      this.height = height;
-      this.carryStrenth = carryStrenth;
+      // this.height = height;
+      // this.carryStrenth = carryStrenth;
       this.food = 0;
+      this.alive = true;
     }
     feed() {
       if (origin.foodToCollect > 0) {
@@ -26,7 +27,7 @@ export class Creature {
         }
       }
       else{
-        this.speed = -1
+        this.alive = false
       }
     }
   }
