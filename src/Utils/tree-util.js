@@ -8,6 +8,6 @@ export function checkTreesForFood() {
   return treePopulation.some((item) => item.foodAvailable);
 }
 
-export function getFood() {
+export function getFood(amountTaken) {
   return 1;
 }
