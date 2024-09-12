@@ -23,4 +23,4 @@ while (itreations <= maxDays && creaturePopulation.length != 0) {
   itreations++;
 }
 
-console.log(creaturePopulation, treePopulation);
+console.log(creaturePopulation.sort((a, b) => b.n - a.n));
