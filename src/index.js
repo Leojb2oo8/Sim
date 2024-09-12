@@ -13,14 +13,13 @@ born(creatureStartPopulation, "Creature");
 born(treeStartPopulation, "Tree");
 
 let itreations = 0;
+console.log(creaturePopulation.sort((a, b) => a.n - b.n), treePopulation);
 while (itreations <= maxDays && creaturePopulation.length != 0) {
-  treePopulation.forEach(regenTreeFood);
-  console.log(creaturePopulation, treePopulation);
-  feedPopulation();
-  console.log(creaturePopulation, treePopulation);
+  treePopulation.forEach(regenTreeFood)
+  feedPopulation()
   changePopulation();
-  console.log(creaturePopulation, treePopulation);
   itreations++;
+  console.log(creaturePopulation.sort((a, b) => b.n - a.n), treePopulation, creaturePopulation.length,"\n///////////////////////////////////////////NEW DAY///////////////////////////////////////////");
 }
 
 console.log(creaturePopulation.sort((a, b) => b.n - a.n));

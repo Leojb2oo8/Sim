@@ -10,8 +10,14 @@ export function checkTreesForFood() {
 }
 
 export function getFood(amountTaken) {
-  treeChosen = randomInt(treePopulation.length, 0)
-  if (amountTaken >= treePopulation[treeChosen].foodAvailable)
-  treePopulation[treeChosen].foodAvailable=0
-  return 1;
+  const treeChosen = randomInt(treePopulation.length - 1, 0)
+  if (amountTaken >= treePopulation[treeChosen].foodAvailable){
+    const foodToSend = treePopulation[treeChosen].foodAvailable
+    treePopulation[treeChosen].foodAvailable = 0;
+    return foodToSend;
+  }
+  else if (amountTaken < treePopulation[treeChosen].foodAvailable){
+    treePopulation[treeChosen].foodAvailable -= amountTaken;
+    return amountTaken;
+  }
 }
