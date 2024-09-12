@@ -5,7 +5,6 @@ import {
   creatureStartPopulation,
   treeStartPopulation,
   maxDays,
-  origin,
   creaturePopulation,
   treePopulation,
 } from "./variables.js";
