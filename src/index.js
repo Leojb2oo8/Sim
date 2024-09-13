@@ -1,6 +1,7 @@
-import fs from 'fs';
+
 import { feedPopulation, changePopulation } from "./Utils/creature-util.js";
-import { born, writeInFile } from "./Utils/general.js";
+import { born } from "./Utils/general.js";
+import { openLogFile, writeInFile } from "./Utils/logs.js";
 import { deleteDeadTrees, regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
 import {
   creatureStartPopulation,
@@ -10,11 +11,7 @@ import {
   treePopulation,
 } from "./variables.js";
 
-
-fs.writeFile("Log.txt", "", (err)=>{
-  if (err) throw err;
-})
-
+openLogFile();
 
 
 born(creatureStartPopulation, "Creature");

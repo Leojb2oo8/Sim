@@ -1,6 +1,4 @@
-import fs from 'fs';
 import {creaturePopulation, setNewPopulation} from "../variables.js";
-import { writeInFile } from './general.js';
   
 export function changeCreature(elem) {
     elem.dieOrReproduce();
