@@ -4,14 +4,14 @@ export class Tree {
   livedDays = 0;
   alive = true;
   constructor(
-    height = randomInt(10),
-    food = randomInt(15, 2),
+    initHeight = randomInt(10),
+    initFood = randomInt(15, 2),
     initLiveDays = randomInt(9, 4)
   ) {
-    this.foodAvailable = food;
-    this.height = height;
+    this.foodAvailable = initFood;
+    this.height = initHeight;
     this.lifeTime = initLiveDays;
-    this.originalFood = food;
+    this.originalFood = initFood;
   }
   regenFood() {
     this.livedDays++;

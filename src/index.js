@@ -1,4 +1,3 @@
-
 import { feedPopulation, changePopulation } from "./Utils/creature-util.js";
 import { born } from "./Utils/general.js";
 import { openLogFile, writeInFile } from "./Utils/logs.js";
@@ -25,9 +24,10 @@ writeInFile(treeStartPopulation)
 writeInFile(maxDays)
 
 writeInFile("\nStarting Creature Population:\n")
-writeInFile(creaturePopulation.sort((a, b) => a.n - b.n))
+writeInFile(creaturePopulation.sort((a, b) => a.name - b.name))
 writeInFile("\nStarting Tree Population:\n")
 writeInFile(treePopulation)
+writeInFile("\n//////////////////////////////////////START GAME//////////////////////////////////////\n")
 
   
 
@@ -40,7 +40,7 @@ while (itreations <= maxDays && creaturePopulation.length != 0) {
   itreations++;
 
 
-  writeInFile(creaturePopulation.sort((a, b) => b.n - a.n))
+  writeInFile(creaturePopulation.sort((a, b) => b.name - a.name))
   writeInFile(treePopulation)
   writeInFile("\n///////////////////////////////////////////NEW DAY///////////////////////////////////////////\n")
   

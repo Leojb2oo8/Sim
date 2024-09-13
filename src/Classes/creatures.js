@@ -3,24 +3,24 @@ import { checkTreesForFood, getFood} from "../Utils/tree-util.js";
 
 let currentNameNum = 0;
 export class Creature {
-  n = -1;
+  name = -1;
   speed = 0;
   alive = true;
   food = 0;
   constructor(
-    speed = randomInt(100),
-    height = randomInt(10),
-    carryStrenth = randomInt(3)
+    initSpeed = randomInt(100),
+    initHeight = randomInt(10),
+    initCarryStrenth = randomInt(3)
   ) {
-    this.n = currentNameNum + 1;
+    this.name = currentNameNum + 1;
     currentNameNum++;
-    this.speed = speed;
-    // this.height = height;
-    this.cS = carryStrenth;
+    this.speed = initSpeed;
+    this.height = initHeight;
+    this.carryStrenth = initCarryStrenth;
   }
   feed() {
     if (checkTreesForFood()) {
-      this.food += getFood(this.cS);
+      this.food += getFood(this.carryStrenth);
     }
   }
   dieOrReproduce() {
