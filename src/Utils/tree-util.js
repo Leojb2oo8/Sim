@@ -4,6 +4,9 @@ import { randomInt } from "./general.js";
 export function regenTreeFood(elem) {
   elem.regenFood();
 }
+export function reproduceTrees(elem){
+  elem.reproduce()
+}
 
 export function checkTreesForFood() {
   return treePopulation.some((item) => item.foodAvailable);

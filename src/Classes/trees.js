@@ -1,4 +1,4 @@
-import { randomInt } from "../Utils/general.js";
+import { randomInt, born } from "../Utils/general.js";
 
 export class Tree {
   livedDays = 0;
@@ -17,8 +17,14 @@ export class Tree {
     this.livedDays++;
     if (this.lifeTime > this.livedDays) {
       this.foodAvailable = this.originalFood;
-    } 
-    else 
+    } else {
       this.alive = false;
+    }
   }
+
+  reproduce() {
+    if (this.foodAvailable >= 2) {
+      born(1,"Tree")
+      }
+    }
 }
