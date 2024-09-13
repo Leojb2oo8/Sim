@@ -1,4 +1,6 @@
+import fs from 'fs';
 import {creaturePopulation, setNewPopulation} from "../variables.js";
+import { writeInFile } from './general.js';
   
 export function changeCreature(elem) {
     elem.dieOrReproduce();
@@ -11,7 +13,11 @@ export function feedPopulation() {
   
 export function changePopulation() {
     creaturePopulation.forEach(changeCreature);
-    console.log("//////DEATHS//////",creaturePopulation.sort((a, b) => a.speed - b.speed),"//////DEATHS//////");
+    // writeInFile("\n//////DEATHS///////\n")
+    // writeInFile(creaturePopulation.sort((a, b) => a.speed - b.speed))
+    // writeInFile("//////DEATHS///////\n")
+
+
     const newPopulation = creaturePopulation.filter((item) => item.alive);
     setNewPopulation(newPopulation, "Creature");
   }
