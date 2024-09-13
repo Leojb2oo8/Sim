@@ -1,4 +1,4 @@
-import { treePopulation } from "../variables.js";
+import { setNewPopulation, treePopulation } from "../variables.js";
 import { randomInt } from "./general.js";
 
 export function regenTreeFood(elem) {
@@ -23,4 +23,9 @@ export function getFood(amountTaken) {
     treePopulation[treeChosen].foodAvailable -= amountTaken;
     return amountTaken;
   }
+}
+
+export function deleteDeadTrees(){
+  const newPopulation = treePopulation.filter((item) => item.alive);
+    setNewPopulation(newPopulation, "Tree");
 }

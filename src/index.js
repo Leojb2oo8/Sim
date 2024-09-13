@@ -1,6 +1,6 @@
 import { feedPopulation, changePopulation } from "./Utils/creature-util.js";
 import { born } from "./Utils/general.js";
-import { regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
+import { deleteDeadTrees, regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
 import {
   creatureStartPopulation,
   treeStartPopulation,
@@ -19,6 +19,7 @@ while (itreations <= maxDays && creaturePopulation.length != 0) {
   feedPopulation()
   changePopulation();
   treePopulation.forEach(reproduceTrees)
+  deleteDeadTrees()
   itreations++;
   console.log(creaturePopulation.sort((a, b) => b.n - a.n), treePopulation, creaturePopulation.length,"\n///////////////////////////////////////////NEW DAY///////////////////////////////////////////");
 }
