@@ -1,5 +1,5 @@
 export const creatureStartPopulation = 5;
-export const treeStartPopulation = 1;
+export const treeStartPopulation = 3;
 export const maxDays = 10;
 
 
