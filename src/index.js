@@ -13,7 +13,7 @@ import {
 openLogFile();
 
 
-born(creatureStartPopulation, "Creature");
+born(creatureStartPopulation, "Creature", 50);
 born(treeStartPopulation, "Tree");
 
 let itreations = 0;
@@ -40,8 +40,8 @@ while (itreations <= maxDays && creaturePopulation.length != 0) {
   itreations++;
 
 
-  writeInFile(creaturePopulation.sort((a, b) => b.name - a.name))
   writeInFile(treePopulation)
+  writeInFile(creaturePopulation.sort((a, b) => a.speed - b.speed))
   writeInFile("\n///////////////////////////////////////////NEW DAY///////////////////////////////////////////\n")
   
 }

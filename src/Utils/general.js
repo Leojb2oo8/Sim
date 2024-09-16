@@ -5,7 +5,8 @@ export function born(amountBorn, whatBorn, parentValue) {
   for (let i = 0; i < amountBorn; i++) {
     switch (whatBorn) {
       case "Creature":
-        console.log(parentValue)
+         console.log( passGenes(parentValue))
+        // console.log(parentValue)
         creaturePopulation.push(new Creature(passGenes(parentValue)));
         break;
       case "Tree":
@@ -17,10 +18,10 @@ export function born(amountBorn, whatBorn, parentValue) {
 
 function passGenes(parentValue){
   if (randomInt(2) == 1){
-    console.log( parentValue+randomInt(randomInt(9,4),0))
+    return parentValue+randomInt(randomInt(9,4),0)
   }
   else{
-    console.log( parentValue-randomInt(randomInt(9,4),0))
+    return parentValue-randomInt(randomInt(9,4),0)
   }
 }
 
