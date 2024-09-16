@@ -7,30 +7,39 @@ export class Creature {
   speed = 0;
   alive = true;
   food = 0;
+  livedDays = 0;
   constructor(
     // initSpeed = randomInt(100),
-    initSpeed = 50,
+    initSpeed,
     initHeight = randomInt(10),
-    initCarryStrenth = randomInt(3)
+    initCarryStrenth = randomInt(3),
+    initLiveDays = randomInt(9, 4)
   ) {
     this.name = currentNameNum + 1;
     currentNameNum++;
     this.speed = initSpeed;
     this.height = initHeight;
     this.carryStrenth = initCarryStrenth;
+    this.lifeTime = initLiveDays;
   }
   feed() {
     if (checkTreesForFood()) {
       this.food += getFood(this.carryStrenth);
     }
   }
+
+
   dieOrReproduce() {
-    if (this.food >= 1) {
-      this.food--;
-      if (this.food > 0) {
-        // console.log(this.speed)
-        born(this.food, "Creature", this.speed);
-        this.food = 0;
+    this.livedDays++;
+    if (this.lifeTime > this.livedDays) {
+      if (this.food >= 1) {
+        this.food--;
+        if (this.food > 0) {
+          born(this.food, "Creature", this.speed);
+          this.food = 0;
+        }
+      } else {
+        this.alive = false;
       }
     } else {
       this.alive = false;
