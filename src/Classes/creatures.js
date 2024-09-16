@@ -8,7 +8,8 @@ export class Creature {
   alive = true;
   food = 0;
   constructor(
-    initSpeed = randomInt(100),
+    // initSpeed = randomInt(100),
+    initSpeed = 50,
     initHeight = randomInt(10),
     initCarryStrenth = randomInt(3)
   ) {
