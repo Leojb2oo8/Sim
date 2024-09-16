@@ -28,7 +28,7 @@ export class Creature {
     if (this.food >= 1) {
       this.food--;
       if (this.food > 0) {
-        console.log(this.speed)
+        // console.log(this.speed)
         born(this.food, "Creature", this.speed);
         this.food = 0;
       }

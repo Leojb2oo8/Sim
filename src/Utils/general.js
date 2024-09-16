@@ -5,7 +5,7 @@ export function born(amountBorn, whatBorn, parentValue) {
   for (let i = 0; i < amountBorn; i++) {
     switch (whatBorn) {
       case "Creature":
-         console.log( passGenes(parentValue))
+        //  console.log( passGenes(parentValue))
         // console.log(parentValue)
         creaturePopulation.push(new Creature(passGenes(parentValue)));
         break;
