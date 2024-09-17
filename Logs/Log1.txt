@@ -52,7 +52,7 @@ Starting Tree Population:
 {"livedDays":0,"alive":true,"foodAvailable":15,"height":9,"lifeTime":7,"originalFood":15}
 {"livedDays":0,"alive":true,"foodAvailable":10,"height":3,"lifeTime":7,"originalFood":10}
 {"livedDays":0,"alive":true,"foodAvailable":6,"height":1,"lifeTime":4,"originalFood":6}
-{"name":31,"speed":37,"alive":true,"food":0,"height":6,"carryStrenth":2}
+{"name":31,"speed":-999,"alive":true,"food":0,"height":6,"carryStrenth":2}
 {"name":32,"speed":40,"alive":true,"food":0,"height":10,"carryStrenth":3}
 {"name":15,"speed":43,"alive":true,"food":0,"height":5,"carryStrenth":1}
 {"name":3,"speed":45,"alive":true,"food":0,"height":9,"carryStrenth":3}

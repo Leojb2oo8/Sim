@@ -9,7 +9,7 @@ export class Creature {
   food = 0;
   livedDays = 0;
   constructor(
-    // initSpeed = randomInt(100),
+    // initSpeed = -999,
     initSpeed,
     initHeight = randomInt(10),
     initCarryStrenth = randomInt(3),
@@ -35,7 +35,7 @@ export class Creature {
       if (this.food >= 1) {
         this.food--;
         if (this.food > 0) {
-          born(this.food, "Creature", this.speed);
+          born(this.food, "Creature", this.speed, this.height);
           this.food = 0;
         }
       } else {

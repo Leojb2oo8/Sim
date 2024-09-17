@@ -1,5 +1,5 @@
 import { feedPopulation, changePopulation} from "./Utils/creature-util.js";
-import { born } from "./Utils/general.js";
+import { born, randomInt } from "./Utils/general.js";
 import { openLogFile, writeInFile } from "./Utils/logs.js";
 import { deleteDeadTrees, regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
 import {
@@ -13,8 +13,8 @@ import {
 openLogFile();
 
 
-born(creatureStartPopulation, "Creature", 50);
-born(treeStartPopulation, "Tree");
+born(creatureStartPopulation, "Creature", randomInt(100));
+born(treeStartPopulation, "Tree",0 ,);
 
 let itreations = 0;
 
@@ -46,4 +46,4 @@ while (itreations <= maxDays && creaturePopulation.length != 0) {
   
 }
 
-writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length)
+writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations)
