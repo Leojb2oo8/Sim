@@ -1,13 +1,12 @@
 import { creaturePopulation, treePopulation } from "../variables.js";
 import { Creature, Tree } from "../Classes/index.js";
+import { passGenes } from "./genes.js";
 
-export function born(amountBorn, whatBorn, parentValue) {
+export function born(amountBorn, whatBorn, parentalValueHeight, parentalValueSpeed) {
   for (let i = 0; i < amountBorn; i++) {
     switch (whatBorn) {
       case "Creature":
-        //  console.log( passGenes(parentValue))
-        // console.log(parentValue)
-        creaturePopulation.push(new Creature(passGenes(parentValue)));
+        creaturePopulation.push(new Creature(passGenes(parentalValueSpeed)));
         break;
       case "Tree":
         treePopulation.push(new Tree());
@@ -15,18 +14,6 @@ export function born(amountBorn, whatBorn, parentValue) {
     }
   }
 }
-
-function passGenes(parentValue){
-  if (randomInt(2) == 1){
-    return parentValue+randomInt(randomInt(9,4),0)
-  }
-  else{
-    return parentValue-randomInt(randomInt(9,4),0)
-  }
-}
-
-
-
 
 export function randomInt(max, min = 1) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
