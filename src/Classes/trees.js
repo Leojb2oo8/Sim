@@ -24,7 +24,9 @@ export class Tree {
 
   reproduce() {
     if (this.foodAvailable >= 2) {
-      born(1,"Tree")
+      if (randomInt(2) == 1){
+        born(1,"Tree")
+      }
       }
     }
 }

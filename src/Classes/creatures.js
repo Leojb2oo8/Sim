@@ -24,7 +24,7 @@ export class Creature {
   }
   feed() {
     if (checkTreesForFood()) {
-      this.food += getFood(this.carryStrenth);
+      this.food += getFood(this.carryStrenth, this.height);
     }
   }
 

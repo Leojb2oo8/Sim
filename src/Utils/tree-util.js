@@ -12,17 +12,26 @@ export function checkTreesForFood() {
   return treePopulation.some((item) => item.foodAvailable);
 }
 
-export function getFood(amountTaken) {
+export function getFood(amountTaken, height) {
   const treeChosen = randomInt(treePopulation.length - 1, 0)
-  if (amountTaken >= treePopulation[treeChosen].foodAvailable){
-    const foodToSend = treePopulation[treeChosen].foodAvailable
-    treePopulation[treeChosen].foodAvailable = 0;
-    return foodToSend;
+  if (height >= treePopulation[treeChosen].height){
+    
+    if (amountTaken >= treePopulation[treeChosen].foodAvailable){
+      const foodToSend = treePopulation[treeChosen].foodAvailable
+      treePopulation[treeChosen].foodAvailable = 0;
+      return foodToSend;
+    }
+    else if (amountTaken < treePopulation[treeChosen].foodAvailable){
+      treePopulation[treeChosen].foodAvailable -= amountTaken;
+      return amountTaken;
+    }
+  } else {
+    return 0
   }
-  else if (amountTaken < treePopulation[treeChosen].foodAvailable){
-    treePopulation[treeChosen].foodAvailable -= amountTaken;
-    return amountTaken;
-  }
+
+
+
+
 }
 
 export function deleteDeadTrees(){
