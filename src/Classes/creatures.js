@@ -13,7 +13,7 @@ export class Creature {
     initSpeed,
     initHeight = randomInt(10),
     initCarryStrenth = randomInt(3),
-    initLiveDays = randomInt(9, 4)
+    initLiveDays = randomInt(6, 3)
   ) {
     this.name = currentNameNum + 1;
     currentNameNum++;
