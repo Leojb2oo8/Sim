@@ -4,7 +4,7 @@ export class Tree {
   livedDays = 0;
   alive = true;
   constructor(
-    initHeight = randomInt(10),
+    initHeight,
     initFood = randomInt(15, 2),
     initLiveDays = randomInt(9, 4)
   ) {
@@ -25,7 +25,7 @@ export class Tree {
   reproduce() {
     if (this.foodAvailable >= 2) {
       if (randomInt(2) == 1){
-        born(1,"Tree",0, this.height)
+        born(1, "Tree", 0, this.height)
       }
       }
     }

@@ -11,7 +11,7 @@ export class Creature {
   constructor(
     // initSpeed = -999,
     initSpeed,
-    initHeight = randomInt(10),
+    initHeight,
     initCarryStrenth = randomInt(3),
     initLiveDays = randomInt(6, 3)
   ) {

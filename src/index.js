@@ -13,8 +13,8 @@ import {
 openLogFile();
 
 
-born(creatureStartPopulation, "Creature", randomInt(100));
-born(treeStartPopulation, "Tree",0 ,);
+born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
+born(treeStartPopulation, "Tree",0 ,randomInt(10));
 
 let itreations = 0;
 
