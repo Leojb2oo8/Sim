@@ -40,8 +40,8 @@ while (itreations <= maxDays && creaturePopulation.length != 0) {
   // console.log(itreations)
 
 
-  writeInFile(treePopulation)
-  writeInFile(creaturePopulation.sort((a, b) => a.speed - b.speed))
+  writeInFile(treePopulation.sort((a, b) => a.height - b.height))
+  writeInFile(creaturePopulation.sort((a, b) => a.height - b.height))
   writeInFile("\n///////////////////////////////////////////NEW DAY///////////////////////////////////////////\n")
   
 }

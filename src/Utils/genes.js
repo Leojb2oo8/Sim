@@ -7,6 +7,10 @@ export function passGenes(parentValue, min, max){
       return parentValue+randomInt(randomInt(max, min),0)
     }
     else{
-      return parentValue-randomInt(randomInt(max, min),0)
+      let result = parentValue-randomInt(randomInt(max, min),0)
+      if (result < 0){
+        return 0
+         
+      }else {return result}
     }
   }
