@@ -9,11 +9,11 @@ export class Creature {
   food = 0;
   livedDays = 0;
   constructor(
-    // initSpeed = -999,
     initSpeed,
     initHeight,
     initCarryStrenth = randomInt(3),
-    initLiveDays = randomInt(6, 3)
+    initLiveDays = randomInt(6, 3),
+    initThief = [randomInt(2), randomInt(100)]
   ) {
     this.name = currentNameNum + 1;
     currentNameNum++;
@@ -21,6 +21,7 @@ export class Creature {
     this.height = initHeight;
     this.carryStrenth = initCarryStrenth;
     this.lifeTime = initLiveDays;
+    this.thief = initThief
   }
   feed() {
     if (checkTreesForFood()) {

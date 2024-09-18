@@ -37,7 +37,6 @@ while (itreations <= maxDays && creaturePopulation.length != 0) {
   treePopulation.forEach(reproduceTrees)
   deleteDeadTrees()
   itreations++;
-  // console.log(itreations)
 
 
   writeInFile(treePopulation.sort((a, b) => a.height - b.height))

@@ -4,10 +4,6 @@ export const maxDays = 50;
 
 
 
-
-
-
-
 export let creaturePopulation = [];
 export let treePopulation = [];
 
