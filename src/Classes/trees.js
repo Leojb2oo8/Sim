@@ -7,7 +7,7 @@ export class Tree {
   alive = true;
   constructor(
     initHeight,
-    initFood = randomInt(15, 2),
+    initFood = randomInt(15, 3),
     initLiveDays = randomInt(9, 4)
   ) {
     this.name = currentNameNum + 1;

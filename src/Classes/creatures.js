@@ -1,5 +1,6 @@
-import { randomInt, born} from "../Utils/general.js";
+import { randomInt, born, randomTFWeight} from "../Utils/general.js";
 import { checkTreesForFood, getFood} from "../Utils/tree-util.js";
+import { checkCreaturesForFood } from "../Utils/creature-util.js";
 
 let currentNameNum = 0;
 export class Creature {
@@ -13,7 +14,7 @@ export class Creature {
     initHeight,
     initCarryStrenth = randomInt(3),
     initLiveDays = randomInt(6, 3),
-    initThief = [randomInt(2), randomInt(100)]
+    initThief = [randomTFWeight(100,50), randomInt(100)]
   ) {
     this.name = currentNameNum + 1;
     currentNameNum++;
@@ -26,6 +27,14 @@ export class Creature {
   feed() {
     if (checkTreesForFood()) {
       this.food += getFood(this.carryStrenth, this.height);
+    }
+  }
+
+  steal() {
+    if (this.thief[0] == true && this.food == 0){
+      if (checkCreaturesForFood()) {
+        // this.food += getFood(this.carryStrenth, this.height);
+      }
     }
   }
 

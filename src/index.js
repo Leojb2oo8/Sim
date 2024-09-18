@@ -1,4 +1,4 @@
-import { feedPopulation, changePopulation} from "./Utils/creature-util.js";
+import { feedAndChangePopulation} from "./Utils/creature-util.js";
 import { born, randomInt } from "./Utils/general.js";
 import { openLogFile, writeInFile } from "./Utils/logs.js";
 import { deleteDeadTrees, regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
@@ -32,8 +32,7 @@ writeInFile("\n//////////////////////////////////////START GAME/////////////////
 
 while (itreations <= maxDays && creaturePopulation.length != 0) {
   treePopulation.forEach(regenTreeFood)
-  feedPopulation()
-  changePopulation();
+  feedAndChangePopulation();
   treePopulation.forEach(reproduceTrees)
   deleteDeadTrees()
   itreations++;
