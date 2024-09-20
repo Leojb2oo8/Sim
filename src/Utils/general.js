@@ -1,5 +1,5 @@
-import { creaturePopulation, treePopulation } from "../variables.js";
-import { Creature, Tree } from "../Classes/index.js";
+import { creaturePopulation, treePopulation, predatorPopulation } from "../variables.js";
+import { Creature, Tree, Predator} from "../Classes/index.js";
 import { passGenes } from "./genes.js";
 
 export function born(amountBorn, whatBorn, parentalValueSpeed, parentalValueHeight) {
@@ -10,6 +10,9 @@ export function born(amountBorn, whatBorn, parentalValueSpeed, parentalValueHeig
         break;
       case "Tree":
         treePopulation.push(new Tree(passGenes(parentalValueHeight,2,3)));
+        break;
+      case "Predator":
+        predatorPopulation.push(new Predator(passGenes(parentalValueSpeed,4,7)));
         break;
     }
   }

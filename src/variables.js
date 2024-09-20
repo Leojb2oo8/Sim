@@ -6,6 +6,7 @@ export const maxDays = 20;
 
 export let creaturePopulation = [];
 export let treePopulation = [];
+export let predatorPopulation = [];
 
 export const origin = {
   foodToCollect: 2,
