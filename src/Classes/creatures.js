@@ -33,7 +33,7 @@ export class Creature {
   steal() {
     if (this.thief[0] == true && this.food == 0){
       if (checkCreaturesForFood()) {
-        // this.food += getFood(this.carryStrenth, this.height);
+        this.food += getFood(this.carryStrenth, this.height);
       }
     }
   }
