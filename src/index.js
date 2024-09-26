@@ -1,14 +1,17 @@
-import { feedAndChangePopulation} from "./Utils/creature-util.js";
-import { born, randomInt } from "./Utils/general.js";
-import { openLogFile, writeInFile } from "./Utils/logs.js";
 import { deleteDeadTrees, regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
+import { feedAndChangePopulation} from "./Utils/creature-util.js";
+import { plotGraph, expandGraph } from "./Logers/graphs.js";
+import { writeInFile } from "./Logers/logs.js";
+import { beforeStart } from "./beforeSim.js";
 import {
-  creatureStartPopulation,
-  treeStartPopulation,
   maxDays,
   creaturePopulation,
   treePopulation,
   predatorPopulation,
+  maxGraphY,
+  maxGraphX,
+  graphLogName,
+  graph,
 } from "./variables.js";
 
 
@@ -17,25 +20,18 @@ let dayCompareList = [];
 let newDay = ["Day", "CreaturePop", "TreePop"]
 dayCompareList.push(newDay)
 
-openLogFile();
+beforeStart()
 
 
-born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
-born(treeStartPopulation, "Tree",0 ,randomInt(10));
-born(5, "Predator",randomInt(100) ,randomInt(10));
 
-writeInFile("Starting Variables:")
-writeInFile(creatureStartPopulation)
-writeInFile(treeStartPopulation)
-writeInFile(maxDays)
+plotGraph(graph, [5], [4], "🟩", maxGraphY)
 
-writeInFile("\nStarting Creature Population:\n")
-writeInFile(creaturePopulation.sort((a, b) => a.name - b.name))
-writeInFile("\nStarting Tree Population:\n")
-writeInFile(treePopulation)
-writeInFile("\nStarting Predator Population:\n")
-writeInFile(predatorPopulation)
-writeInFile("\n//////////////////////////////////////START GAME//////////////////////////////////////\n")
+expandGraph(graph, 2, maxGraphX)
+
+writeInFile(graph, graphLogName);
+
+
+
 
 function runSim(){
   while (itreations <= maxDays && creaturePopulation.length != 0) {
@@ -47,26 +43,22 @@ function runSim(){
 
     newDay = [itreations, creaturePopulation.length, treePopulation.length]
     dayCompareList.push(newDay)
-    // writeInFile(treePopulation.sort((a, b) => a.height - b.height))
-    // writeInFile(creaturePopulation.sort((a, b) => a.height - b.height))
-    // writeInFile("\n///////////////////////////////////////////NEW DAY///////////////////////////////////////////\n")
-    
   }
 }
 
-// runSim()
-while (itreations<100){
-  itreations=0
-  creaturePopulation.length = 0
-  treePopulation.length = 0
-  predatorPopulation.length = 0
-  born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
-  born(treeStartPopulation, "Tree",0 ,randomInt(10));
-  born(5, "Predator",randomInt(100) ,randomInt(10));
+runSim()
+// while (itreations<100){
+//   itreations=0
+//   creaturePopulation.length = 0
+//   treePopulation.length = 0
+//   predatorPopulation.length = 0
+//   born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
+//   born(treeStartPopulation, "Tree",0 ,randomInt(10));
+//   born(5, "Predator",randomInt(100) ,randomInt(10));
 
-  runSim()
-  console.log(itreations)
-}
+//   runSim()
+//   console.log(itreations)
+// }
 
 writeInFile (dayCompareList)
 writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations)
