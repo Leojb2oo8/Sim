@@ -1,16 +1,18 @@
+import { makeGraph } from "./Logers/graphs.js";
+
 export const creatureStartPopulation = 5;
 export const treeStartPopulation = 3;
-export const maxDays = 100;
+export const maxDays = 10;
 export const logName = "Log.txt";
 export const graphLogName = "GraphLog.txt";
-export const maxGraphX = 5;
-export const maxGraphY = 10;
+export const startGraphX = 11;
+export const startGraphY = 500;
 
 
 export let creaturePopulation = [];
 export let treePopulation = [];
 export let predatorPopulation = [];
-export let graph = makeGraph(maxGraphY, maxGraphX)
+export let populationGraph = makeGraph(startGraphY, startGraphX)
 
 export const origin = {
   foodToCollect: 2,

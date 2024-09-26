@@ -8,13 +8,12 @@ import {
   creaturePopulation,
   treePopulation,
   predatorPopulation,
-  maxGraphY,
-  maxGraphX,
   graphLogName,
-  graph,
+  populationGraph,
+  startGraphY,
 } from "./variables.js";
 
-
+let currentGraphY = startGraphY;
 let itreations = 0;
 let dayCompareList = [];
 let newDay = ["Day", "CreaturePop", "TreePop"]
@@ -24,23 +23,38 @@ beforeStart()
 
 
 
-plotGraph(graph, [5], [4], "🟩", maxGraphY)
+// plotGraph(populationGraph, [5], [4], "🟩", populationGraph.lenth)
 
-expandGraph(graph, 2, maxGraphX)
+// expandGraph(populationGraph, 2, startGraphX)
 
-writeInFile(graph, graphLogName);
 
 
 
 
 function runSim(){
-  while (itreations <= maxDays && creaturePopulation.length != 0) {
+  while (itreations <= maxDays) {
     treePopulation.forEach(regenTreeFood)
     feedAndChangePopulation();
     treePopulation.forEach(reproduceTrees)
     deleteDeadTrees()
     itreations++;
 
+
+    // console.log(treePopulation.length +" > "+creaturePopulation.length)
+    // if (treePopulation.lenth > creaturePopulation.length){
+    //   console.log("tree")
+    //   // currentGraphY += treePopulation.lenth
+    // }
+    // else if (creaturePopulation.length < treePopulation.lenth) {
+    //   console.log("creat")
+    //   // currentGraphY += creaturePopulation.length
+    // }
+
+
+
+    plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", currentGraphY)
+    plotGraph(populationGraph, treePopulation.length, itreations, "🟩", currentGraphY)
+    
     newDay = [itreations, creaturePopulation.length, treePopulation.length]
     dayCompareList.push(newDay)
   }
@@ -48,18 +62,21 @@ function runSim(){
 
 runSim()
 // while (itreations<100){
-//   itreations=0
-//   creaturePopulation.length = 0
-//   treePopulation.length = 0
-//   predatorPopulation.length = 0
-//   born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
-//   born(treeStartPopulation, "Tree",0 ,randomInt(10));
-//   born(5, "Predator",randomInt(100) ,randomInt(10));
-
-//   runSim()
-//   console.log(itreations)
-// }
-
+  //   itreations=0
+  //   creaturePopulation.length = 0
+  //   treePopulation.length = 0
+  //   predatorPopulation.length = 0
+  //   born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
+  //   born(treeStartPopulation, "Tree",0 ,randomInt(10));
+  //   born(5, "Predator",randomInt(100) ,randomInt(10));
+  
+  //   runSim()
+  //   console.log(itreations)
+  // }
+  
 writeInFile (dayCompareList)
 writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations)
 
+writeInFile(populationGraph, graphLogName);
+  
+  
