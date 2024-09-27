@@ -2,12 +2,11 @@ import { makeGraph } from "./Logers/graphs.js";
 
 export const creatureStartPopulation = 5;
 export const treeStartPopulation = 3;
-export const maxDays = 20;
+export const maxDays = 10;
 export const logName = "Log.txt";
 export const graphLogName = "GraphLog.txt";
-export const startGraphX = 21;
-export const startGraphY = 100000;
-
+export const startGraphX = 11;
+export const startGraphY = 10;
 
 export let creaturePopulation = [];
 export let treePopulation = [];

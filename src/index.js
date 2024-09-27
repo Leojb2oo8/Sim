@@ -11,21 +11,17 @@ import {
   graphLogName,
   populationGraph,
   startGraphY,
+  startGraphX,
 } from "./variables.js";
 
 let currentGraphY = startGraphY;
 let itreations = 0;
+let difference = 0;
 let dayCompareList = [];
 let newDay = ["Day", "CreaturePop", "TreePop"]
 dayCompareList.push(newDay)
 
 beforeStart()
-
-
-
-// expandGraph(populationGraph, 2, startGraphX)
-
-
 
 
 
@@ -37,16 +33,20 @@ function runSim(){
     deleteDeadTrees()
     itreations++;
 
-
     if (treePopulation.length > creaturePopulation.length){
-      console.log("tree")
-      expandGraph(populationGraph, 2, startGraphX)
-      // currentGraphY += treePopulation.length
+      if (currentGraphY < treePopulation.length){
+        difference = treePopulation.length - currentGraphY
+        populationGraph = expandGraph(populationGraph, difference, startGraphX)
+      }
     }
     else {
-      console.log("creat")
-      // currentGraphY += creaturePopulation.length
+      if (currentGraphY < creaturePopulation.length){
+        difference = creaturePopulation.length - currentGraphY
+        populationGraph = expandGraph(populationGraph, difference, startGraphX)
+      }
     }
+    console.log("g")
+    difference = 0
 
     plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", currentGraphY)
     plotGraph(populationGraph, treePopulation.length, itreations, "🟩", currentGraphY)
