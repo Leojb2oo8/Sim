@@ -6,7 +6,7 @@ export const maxDays = 20;
 export const logName = "Log.txt";
 export const graphLogName = "GraphLog.txt";
 export const startGraphX = 21;
-export const startGraphY = 10000;
+export const startGraphY = 100000;
 
 
 export let creaturePopulation = [];

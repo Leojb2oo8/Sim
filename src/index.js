@@ -23,8 +23,6 @@ beforeStart()
 
 
 
-// plotGraph(populationGraph, [5], [4], "🟩", populationGraph.lenth)
-
 // expandGraph(populationGraph, 2, startGraphX)
 
 
@@ -40,17 +38,15 @@ function runSim(){
     itreations++;
 
 
-    // console.log(treePopulation.length +" > "+creaturePopulation.length)
-    // if (treePopulation.lenth > creaturePopulation.length){
-    //   console.log("tree")
-    //   // currentGraphY += treePopulation.lenth
-    // }
-    // else if (creaturePopulation.length < treePopulation.lenth) {
-    //   console.log("creat")
-    //   // currentGraphY += creaturePopulation.length
-    // }
-
-
+    if (treePopulation.length > creaturePopulation.length){
+      console.log("tree")
+      expandGraph(populationGraph, 2, startGraphX)
+      // currentGraphY += treePopulation.length
+    }
+    else {
+      console.log("creat")
+      // currentGraphY += creaturePopulation.length
+    }
 
     plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", currentGraphY)
     plotGraph(populationGraph, treePopulation.length, itreations, "🟩", currentGraphY)
