@@ -36,7 +36,6 @@ function runSim(){
     treePopulation.forEach(reproduceTrees)
     deleteDeadTrees()
     itreations++;
-    console.log(populationGraph.length)
     if (treePopulation.length > creaturePopulation.length){
       if (populationGraph.length <= treePopulation.length){
         difference = treePopulation.length - populationGraph.length
@@ -50,7 +49,6 @@ function runSim(){
       }
     }
     difference = 0
-    console.log(populationGraph.length,"----",creaturePopulation.length,"----",treePopulation.length)
 
     plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", populationGraph.length)
     plotGraph(populationGraph, treePopulation.length, itreations, "🟩", populationGraph.length)

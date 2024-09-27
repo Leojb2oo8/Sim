@@ -30,16 +30,17 @@ export function expandGraph(graph, newColums, rows){
 export function plotGraph(graph, cordinate1, cordinate2, colur, maxX){
     let newCordinate1 = maxX - cordinate1
 
-    if (graph[newCordinate1-1][cordinate2-1] == "⬛"){
-        if (newCordinate1 == graph.length){
-            graph[newCordinate1-1][cordinate2-1] = "🟥"
-        }
-        else{
-            graph[newCordinate1-1][cordinate2-1] = colur
-        }
+    if (newCordinate1 == graph.length){
+        graph[newCordinate1-1][cordinate2-1] = "🟥"
     }
     else{
-        graph[newCordinate1-1][cordinate2-1] = "🟧"
+        if (graph[newCordinate1-1][cordinate2-1] == "⬛"){
+            graph[newCordinate1-1][cordinate2-1] = colur
+
+        }
+        else{
+            graph[newCordinate1-1][cordinate2-1] = "🟧"
+        }
     }
 }
 

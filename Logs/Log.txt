@@ -1,29 +1,60 @@
 Starting Variables:
 5
 3
-100
+25
 
 Starting Creature Population:
 
-{"name":1,"speed":68,"alive":true,"food":0,"livedDays":0,"height":2,"carryStrenth":2,"lifeTime":6,"thief":[false,8]}
-{"name":2,"speed":71,"alive":true,"food":0,"livedDays":0,"height":0,"carryStrenth":3,"lifeTime":4,"thief":[false,35]}
-{"name":3,"speed":67,"alive":true,"food":0,"livedDays":0,"height":3,"carryStrenth":1,"lifeTime":6,"thief":[true,24]}
-{"name":4,"speed":67,"alive":true,"food":0,"livedDays":0,"height":3,"carryStrenth":2,"lifeTime":4,"thief":[false,13]}
-{"name":5,"speed":62,"alive":true,"food":0,"livedDays":0,"height":0,"carryStrenth":3,"lifeTime":5,"thief":[true,33]}
+{"name":1,"speed":93,"alive":true,"food":0,"livedDays":0,"height":13,"carryStrenth":3,"lifeTime":3,"thief":[true,28]}
+{"name":2,"speed":90,"alive":true,"food":0,"livedDays":0,"height":12,"carryStrenth":2,"lifeTime":3,"thief":[true,96]}
+{"name":3,"speed":84,"alive":true,"food":0,"livedDays":0,"height":12,"carryStrenth":1,"lifeTime":6,"thief":[true,84]}
+{"name":4,"speed":85,"alive":true,"food":0,"livedDays":0,"height":13,"carryStrenth":1,"lifeTime":5,"thief":[true,35]}
+{"name":5,"speed":86,"alive":true,"food":0,"livedDays":0,"height":10,"carryStrenth":2,"lifeTime":4,"thief":[true,66]}
 
 Starting Tree Population:
 
-{"name":1,"livedDays":0,"alive":true,"foodAvailable":5,"height":10,"lifeTime":5,"originalFood":5}
-{"name":2,"livedDays":0,"alive":true,"foodAvailable":5,"height":9,"lifeTime":9,"originalFood":5}
-{"name":3,"livedDays":0,"alive":true,"foodAvailable":4,"height":11,"lifeTime":8,"originalFood":4}
+{"name":1,"livedDays":0,"alive":true,"foodAvailable":7,"height":6,"lifeTime":7,"originalFood":7}
+{"name":2,"livedDays":0,"alive":true,"foodAvailable":3,"height":8,"lifeTime":7,"originalFood":3}
+{"name":3,"livedDays":0,"alive":true,"foodAvailable":15,"height":8,"lifeTime":9,"originalFood":15}
 
 Starting Predator Population:
 
-{"name":1,"speed":44,"alive":true,"food":0,"livedDays":0,"lifeTime":5}
-{"name":2,"speed":36,"alive":true,"food":0,"livedDays":0,"lifeTime":5}
-{"name":3,"speed":39,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
-{"name":4,"speed":43,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
-{"name":5,"speed":39,"alive":true,"food":0,"livedDays":0,"lifeTime":6}
+{"name":1,"speed":32,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
+{"name":2,"speed":23,"alive":true,"food":0,"livedDays":0,"lifeTime":3}
+{"name":3,"speed":23,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
+{"name":4,"speed":30,"alive":true,"food":0,"livedDays":0,"lifeTime":5}
+{"name":5,"speed":25,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
 
 //////////////////////////////////////START GAME//////////////////////////////////////
 
+["Day","CreaturePop","TreePop"]
+[1,9,3]
+[2,16,4]
+[3,19,5]
+[4,25,6]
+[5,41,6]
+[6,52,6]
+[7,37,3]
+[8,25,2]
+[9,0,0]
+[10,0,0]
+[11,0,0]
+[12,0,0]
+[13,0,0]
+[14,0,0]
+[15,0,0]
+[16,0,0]
+[17,0,0]
+[18,0,0]
+[19,0,0]
+[20,0,0]
+[21,0,0]
+[22,0,0]
+[23,0,0]
+[24,0,0]
+[25,0,0]
+[26,0,0]
+
+Creature POP: 0
+Tree POP: 0
+Days passed: 26
