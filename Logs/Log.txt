@@ -1,29 +1,29 @@
 Starting Variables:
 5
 3
-10
+100
 
 Starting Creature Population:
 
-{"name":1,"speed":6,"alive":true,"food":0,"livedDays":0,"height":10,"carryStrenth":3,"lifeTime":6,"thief":[true,85]}
-{"name":2,"speed":12,"alive":true,"food":0,"livedDays":0,"height":11,"carryStrenth":3,"lifeTime":5,"thief":[true,91]}
-{"name":3,"speed":2,"alive":true,"food":0,"livedDays":0,"height":10,"carryStrenth":1,"lifeTime":3,"thief":[false,92]}
-{"name":4,"speed":10,"alive":true,"food":0,"livedDays":0,"height":9,"carryStrenth":3,"lifeTime":6,"thief":[true,98]}
-{"name":5,"speed":10,"alive":true,"food":0,"livedDays":0,"height":9,"carryStrenth":2,"lifeTime":3,"thief":[false,14]}
+{"name":1,"speed":68,"alive":true,"food":0,"livedDays":0,"height":2,"carryStrenth":2,"lifeTime":6,"thief":[false,8]}
+{"name":2,"speed":71,"alive":true,"food":0,"livedDays":0,"height":0,"carryStrenth":3,"lifeTime":4,"thief":[false,35]}
+{"name":3,"speed":67,"alive":true,"food":0,"livedDays":0,"height":3,"carryStrenth":1,"lifeTime":6,"thief":[true,24]}
+{"name":4,"speed":67,"alive":true,"food":0,"livedDays":0,"height":3,"carryStrenth":2,"lifeTime":4,"thief":[false,13]}
+{"name":5,"speed":62,"alive":true,"food":0,"livedDays":0,"height":0,"carryStrenth":3,"lifeTime":5,"thief":[true,33]}
 
 Starting Tree Population:
 
-{"name":1,"livedDays":0,"alive":true,"foodAvailable":13,"height":2,"lifeTime":6,"originalFood":13}
-{"name":2,"livedDays":0,"alive":true,"foodAvailable":11,"height":3,"lifeTime":7,"originalFood":11}
-{"name":3,"livedDays":0,"alive":true,"foodAvailable":9,"height":6,"lifeTime":4,"originalFood":9}
+{"name":1,"livedDays":0,"alive":true,"foodAvailable":5,"height":10,"lifeTime":5,"originalFood":5}
+{"name":2,"livedDays":0,"alive":true,"foodAvailable":5,"height":9,"lifeTime":9,"originalFood":5}
+{"name":3,"livedDays":0,"alive":true,"foodAvailable":4,"height":11,"lifeTime":8,"originalFood":4}
 
 Starting Predator Population:
 
-{"name":1,"speed":42,"alive":true,"food":0,"livedDays":0,"lifeTime":3}
-{"name":2,"speed":43,"alive":true,"food":0,"livedDays":0,"lifeTime":3}
-{"name":3,"speed":46,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
-{"name":4,"speed":42,"alive":true,"food":0,"livedDays":0,"lifeTime":5}
-{"name":5,"speed":40,"alive":true,"food":0,"livedDays":0,"lifeTime":3}
+{"name":1,"speed":44,"alive":true,"food":0,"livedDays":0,"lifeTime":5}
+{"name":2,"speed":36,"alive":true,"food":0,"livedDays":0,"lifeTime":5}
+{"name":3,"speed":39,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
+{"name":4,"speed":43,"alive":true,"food":0,"livedDays":0,"lifeTime":4}
+{"name":5,"speed":39,"alive":true,"food":0,"livedDays":0,"lifeTime":6}
 
 //////////////////////////////////////START GAME//////////////////////////////////////
 

@@ -12,9 +12,10 @@ import {
   populationGraph,
   startGraphY,
   startGraphX,
+  middleMan,
 } from "./variables.js";
 
-let currentGraphY = startGraphY;
+
 let itreations = 0;
 let difference = 0;
 let dayCompareList = [];
@@ -25,6 +26,9 @@ beforeStart()
 
 
 
+
+
+
 function runSim(){
   while (itreations <= maxDays) {
     treePopulation.forEach(regenTreeFood)
@@ -32,24 +36,24 @@ function runSim(){
     treePopulation.forEach(reproduceTrees)
     deleteDeadTrees()
     itreations++;
-
+    console.log(populationGraph.length)
     if (treePopulation.length > creaturePopulation.length){
-      if (currentGraphY < treePopulation.length){
-        difference = treePopulation.length - currentGraphY
-        populationGraph = expandGraph(populationGraph, difference, startGraphX)
+      if (populationGraph.length <= treePopulation.length){
+        difference = treePopulation.length - populationGraph.length
+        middleMan(expandGraph(populationGraph, difference+1, startGraphX))
       }
     }
     else {
-      if (currentGraphY < creaturePopulation.length){
-        difference = creaturePopulation.length - currentGraphY
-        populationGraph = expandGraph(populationGraph, difference, startGraphX)
+      if (populationGraph.length <= creaturePopulation.length){
+        difference = creaturePopulation.length - populationGraph.length
+        middleMan(expandGraph(populationGraph, difference+1, startGraphX))
       }
     }
-    console.log("g")
     difference = 0
+    console.log(populationGraph.length,"----",creaturePopulation.length,"----",treePopulation.length)
 
-    plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", currentGraphY)
-    plotGraph(populationGraph, treePopulation.length, itreations, "🟩", currentGraphY)
+    plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", populationGraph.length)
+    plotGraph(populationGraph, treePopulation.length, itreations, "🟩", populationGraph.length)
     
     newDay = [itreations, creaturePopulation.length, treePopulation.length]
     dayCompareList.push(newDay)

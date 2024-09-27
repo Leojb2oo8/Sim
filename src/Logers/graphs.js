@@ -31,7 +31,7 @@ export function plotGraph(graph, cordinate1, cordinate2, colur, maxX){
     let newCordinate1 = maxX - cordinate1
 
     if (graph[newCordinate1-1][cordinate2-1] == "⬛"){
-        if (newCordinate1<=499){
+        if (newCordinate1 == graph.length){
             graph[newCordinate1-1][cordinate2-1] = "🟥"
         }
         else{
