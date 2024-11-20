@@ -1,6 +1,6 @@
 import { deleteDeadTrees, regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
 import { feedAndChangePopulation} from "./Utils/creature-util.js";
-import { plotGraph, expandGraph } from "./Logers/graphs.js";
+import { plotGraph, expandGraph, makeGraph} from "./Logers/graphs.js";
 import { writeInFile } from "./Logers/logs.js";
 import { beforeStart } from "./beforeSim.js";
 import {
@@ -19,10 +19,12 @@ import {
 let itreations = 0;
 let difference = 0;
 let dayCompareList = [];
-let newDay = ["Day", "CreaturePop", "TreePop"]
-dayCompareList.push(newDay)
+let startDay = ["Day", "CreaturePop", "TreePop"]
+let newDay = []
+let attemptsTried = 0;
 
-beforeStart()
+dayCompareList.push(startDay)
+
 
 
 
@@ -30,7 +32,11 @@ beforeStart()
 
 
 function runSim(){
-  while (itreations <= maxDays) {
+  beforeStart()
+  dayCompareList = [startDay]
+  middleMan(makeGraph(startGraphY, startGraphX))
+
+  while (itreations <= maxDays && creaturePopulation.length != 0) {
     treePopulation.forEach(regenTreeFood)
     feedAndChangePopulation();
     treePopulation.forEach(reproduceTrees)
@@ -49,7 +55,7 @@ function runSim(){
       }
     }
     difference = 0
-
+    console.log(itreations,"----", creaturePopulation.length,"----", treePopulation.length)
     plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", populationGraph.length)
     plotGraph(populationGraph, treePopulation.length, itreations, "🟩", populationGraph.length)
     
@@ -58,22 +64,21 @@ function runSim(){
   }
 }
 
-runSim()
-// while (itreations<100){
-  //   itreations=0
-  //   creaturePopulation.length = 0
-  //   treePopulation.length = 0
-  //   predatorPopulation.length = 0
-  //   born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
-  //   born(treeStartPopulation, "Tree",0 ,randomInt(10));
-  //   born(5, "Predator",randomInt(100) ,randomInt(10));
+// runSim()
+while (itreations<100){
+    itreations=0
+    creaturePopulation.length = 0
+    treePopulation.length = 0
+    predatorPopulation.length = 0
+
   
-  //   runSim()
-  //   console.log(itreations)
-  // }
+    runSim()
+    // console.log(itreations)
+    attemptsTried ++
+  }
   
 writeInFile (dayCompareList)
-writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations)
+writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations+"\nAttempts Tried: "+attemptsTried)
 
 writeInFile(populationGraph, graphLogName);
   
