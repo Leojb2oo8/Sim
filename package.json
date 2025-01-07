@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "sim": "node ./src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "html": "node ./Website",
   },
   "author": "",
   "license": "ISC"

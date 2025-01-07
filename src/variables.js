@@ -16,6 +16,7 @@ export let populationGraph = makeGraph(startGraphY, startGraphX)
 export function middleMan(newValue){
   populationGraph = newValue
 }
+
 export const origin = {
   foodToCollect: 2,
 };
