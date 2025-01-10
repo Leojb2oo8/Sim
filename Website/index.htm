@@ -6,16 +6,29 @@
         <style>
 
             body {background-color: rgb(184, 224, 243);}
-            .heading {text-align: center;}
+            .center {text-align: center;}
+            .centerTable {margin-left: auto; margin-right: auto;}
+            .tableTopPadding {padding: 15% 0 0 0;}
             h1 {color: rgb(22, 71, 12);}
             hr {height: 5px;
                  background-color: rgb(22, 71, 12);
                  border: none;
                  border-radius: 12px;
             }
-            p {color: rgb(22, 71, 12); font-size:medium}
-            
-            
+            p {color: rgb(22, 71, 12); font-size: medium;}
+
+            table, th, td {
+                border: 5px solid;
+                color: rgb(43, 124, 26);
+                text-align: center;
+                padding: 5px;
+                font-size: 35px;
+            }
+            th {font-weight: bolder;}
+            td {font-weight: 400}
+            table {
+                border-collapse: collapse;
+            }
 
             button {background-color: rgb(43, 124, 26);
                  border: none;
@@ -53,22 +66,34 @@
     </head>
 
     <body>
-        <div class="heading"><h1>Sim</h1></div>
+        <div class="center"><h1>Sim</h1></div>
         <hr>
-        <div class="heading"><p>Made By Leonardo</p></div>
+        <div class="center"><p>Made By Leonardo</p></div>
         
        	<div class="container">
         	<div class="buttonRunSim"><button class="buttonHover" type="button" onclick="">Run Sim</button></div>
             <div class="buttonSettings"><button class="buttonHover" type="button" onclick="">Settings</button></div>
         </div>
 
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-            </ul>
+        <div class="tableTopPadding">
+            <table class="centerTable">
+                <tr>    
+                    <th>Variable</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Creature Start Population</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Tree Start Population</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td>Max Days</td>
+                    <td>---</td>
+                </tr>
+            </table>
         </div>
 
     </body>
