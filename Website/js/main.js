@@ -4,8 +4,11 @@ function showTable(){
     runSim = document.getElementById("runSim")
 
     isActive = table.classList.contains('active');
-    if(!isActive){my.innerText = "Menu"}else{my.innerText = "Settings"}
+    if(!isActive){my.innerText = "Menu" 
+    runSim.innerText = "LOLLLLLL"}else{my.innerText = "Settings" 
+    runSim.innerText = "Run Sim"}
+    
     table.classList.toggle('active');
-    runSim.classList.toggle('active');
+    // runSim.classList.toggle('active');
     // debugger;
 }
