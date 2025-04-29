@@ -64,18 +64,18 @@ function runSim(){
   }
 }
 
-// runSim()
-while (itreations<100){
-    itreations=0
-    creaturePopulation.length = 0
-    treePopulation.length = 0
-    predatorPopulation.length = 0
+runSim()
+// while (itreations<100){
+//     itreations=0
+//     creaturePopulation.length = 0
+//     treePopulation.length = 0
+//     predatorPopulation.length = 0
 
   
-    runSim()
-    // console.log(itreations)
-    attemptsTried ++
-  }
+//     runSim()
+//     // console.log(itreations)
+//     attemptsTried ++
+//   }
   
 writeInFile (dayCompareList)
 writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations+"\nAttempts Tried: "+attemptsTried)

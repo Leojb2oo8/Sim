@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "sim": "node ./src",
-    "html": "node ./Website",
+    "html": "node ./Website"
   },
   "author": "",
   "license": "ISC"
