@@ -3,6 +3,7 @@ import { makeGraph } from "./Logers/graphs.js";
 export const creatureStartPopulation = 5;
 export const treeStartPopulation = 3;
 export const maxDays = 100;
+export const geneMutationChance = 0.01;
 export const logName = "Log.txt";
 export const graphLogName = "GraphLog.txt";
 export const startGraphX = maxDays+1;

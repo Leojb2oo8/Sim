@@ -3,6 +3,7 @@ import { feedAndChangePopulation} from "./Utils/creature-util.js";
 import { plotGraph, expandGraph, makeGraph} from "./Logers/graphs.js";
 import { writeInFile } from "./Logers/logs.js";
 import { beforeStart } from "./beforeSim.js";
+import { totalMutations } from "./Utils/genes.js";
 import {
   maxDays,
   creaturePopulation,
@@ -64,22 +65,20 @@ function runSim(){
   }
 }
 
-runSim()
-// while (itreations<100){
-//     itreations=0
-//     creaturePopulation.length = 0
-//     treePopulation.length = 0
-//     predatorPopulation.length = 0
+// runSim()
+while (itreations<100){
+    itreations=0
+    creaturePopulation.length = 0
+    treePopulation.length = 0
+    predatorPopulation.length = 0
 
   
-//     runSim()
-//     // console.log(itreations)
-//     attemptsTried ++
-//   }
+    runSim()
+    // console.log(itreations)
+    attemptsTried ++
+  }
   
 writeInFile (dayCompareList)
-writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations+"\nAttempts Tried: "+attemptsTried)
+writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations+"\nAttempts Tried: "+attemptsTried+"\nMutatoins: "+totalMutations)
 
 writeInFile(populationGraph, graphLogName);
-  
-  

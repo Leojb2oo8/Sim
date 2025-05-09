@@ -16,9 +16,9 @@ export function beforeStart(){
     openLogFile(logName);
     openLogFile(graphLogName);
 
-    born(creatureStartPopulation, "Creature", randomInt(100), randomInt(10));
-    born(treeStartPopulation, "Tree",0 ,randomInt(10));
-    born(5, "Predator",randomInt(100) ,randomInt(10));
+    born(creatureStartPopulation, "Creature", randomInt(100), randomInt(100));
+    born(treeStartPopulation, "Tree",0 ,randomInt(100));
+    born(5, "Predator",randomInt(100) ,randomInt(100));
 
     writeInFile("Starting Variables:")
     writeInFile(creatureStartPopulation)

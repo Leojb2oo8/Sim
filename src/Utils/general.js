@@ -6,10 +6,10 @@ export function born(amountBorn, whatBorn, parentalValueSpeed, parentalValueHeig
   for (let i = 0; i < amountBorn; i++) {
     switch (whatBorn) {
       case "Creature":
-        creaturePopulation.push(new Creature(passGenes(parentalValueSpeed,4,7), passGenes(parentalValueHeight,2,3)));
+        creaturePopulation.push(new Creature(passGenes(parentalValueSpeed,), passGenes(parentalValueHeight,)));
         break;
       case "Tree":
-        treePopulation.push(new Tree(passGenes(parentalValueHeight,2,3)));
+        treePopulation.push(new Tree(passGenes(parentalValueHeight)));
         break;
       case "Predator":
         predatorPopulation.push(new Predator(passGenes(parentalValueSpeed,4,7)));
