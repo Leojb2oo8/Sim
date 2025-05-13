@@ -1,4 +1,4 @@
-import { makeGraph } from "./Logers/graphs.js";
+// import { makeGraph } from "./Logers/graphs.js";
 
 export const creatureStartPopulation = 5;
 export const treeStartPopulation = 3;
@@ -12,7 +12,7 @@ export const startGraphY = 10;
 export let creaturePopulation = [];
 export let treePopulation = [];
 export let predatorPopulation = [];
-export let populationGraph = makeGraph(startGraphY, startGraphX)
+// export let populationGraph = makeGraph(startGraphY, startGraphX)
 
 export function middleMan(newValue){
   populationGraph = newValue

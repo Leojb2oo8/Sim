@@ -1,6 +1,6 @@
 import { deleteDeadTrees, regenTreeFood, reproduceTrees } from "./Utils/tree-util.js";
 import { feedAndChangePopulation} from "./Utils/creature-util.js";
-import { plotGraph, expandGraph, makeGraph} from "./Logers/graphs.js";
+// import { plotGraph, expandGraph, makeGraph} from "./Logers/graphs.js";
 import { writeInFile } from "./Logers/logs.js";
 import { beforeStart } from "./beforeSim.js";
 import { totalMutations } from "./Utils/genes.js";
@@ -10,7 +10,7 @@ import {
   treePopulation,
   predatorPopulation,
   graphLogName,
-  populationGraph,
+  // populationGraph,
   startGraphY,
   startGraphX,
   middleMan,
@@ -35,7 +35,7 @@ dayCompareList.push(startDay)
 function runSim(){
   beforeStart()
   dayCompareList = [startDay]
-  middleMan(makeGraph(startGraphY, startGraphX))
+  // middleMan(makeGraph(startGraphY, startGraphX))
 
   while (itreations <= maxDays && creaturePopulation.length != 0) {
     treePopulation.forEach(regenTreeFood)
@@ -43,22 +43,22 @@ function runSim(){
     treePopulation.forEach(reproduceTrees)
     deleteDeadTrees()
     itreations++;
-    if (treePopulation.length > creaturePopulation.length){
-      if (populationGraph.length <= treePopulation.length){
-        difference = treePopulation.length - populationGraph.length
-        middleMan(expandGraph(populationGraph, difference+1, startGraphX))
-      }
-    }
-    else {
-      if (populationGraph.length <= creaturePopulation.length){
-        difference = creaturePopulation.length - populationGraph.length
-        middleMan(expandGraph(populationGraph, difference+1, startGraphX))
-      }
-    }
+    // if (treePopulation.length > creaturePopulation.length){
+    //   if (populationGraph.length <= treePopulation.length){
+    //     difference = treePopulation.length - populationGraph.length
+    //     middleMan(expandGraph(populationGraph, difference+1, startGraphX))
+    //   }
+    // }
+    // else {
+    //   if (populationGraph.length <= creaturePopulation.length){
+    //     difference = creaturePopulation.length - populationGraph.length
+    //     middleMan(expandGraph(populationGraph, difference+1, startGraphX))
+    //   }
+    // }
     difference = 0
     console.log(itreations,"----", creaturePopulation.length,"----", treePopulation.length)
-    plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", populationGraph.length)
-    plotGraph(populationGraph, treePopulation.length, itreations, "🟩", populationGraph.length)
+    // plotGraph(populationGraph, creaturePopulation.length, itreations, "🟪", populationGraph.length)
+    // plotGraph(populationGraph, treePopulation.length, itreations, "🟩", populationGraph.length)
     
     newDay = [itreations, creaturePopulation.length, treePopulation.length]
     dayCompareList.push(newDay)
@@ -81,4 +81,4 @@ while (itreations<100){
 writeInFile (dayCompareList)
 writeInFile ("\nCreature POP: "+creaturePopulation.length+"\nTree POP: "+treePopulation.length+"\nDays passed: "+itreations+"\nAttempts Tried: "+attemptsTried+"\nMutatoins: "+totalMutations)
 
-writeInFile(populationGraph, graphLogName);
+// writeInFile(populationGraph, graphLogName);
